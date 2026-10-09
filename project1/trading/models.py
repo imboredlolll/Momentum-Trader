@@ -34,6 +34,7 @@ class MomentumScore(models.Model):
             Stock, on_delete=models.CASCADE, related_name="momentum_scores"
         )
     calculation_date = models.DateField(db_index=True)
+    momentum_score = models.DecimalField(max_digits=10, decimal_places=6, null=True, blank=True)
     rank = models.IntegerField(null=True, blank=True)
     quintile = models.IntegerField(null=True, blank=True)
     is_top_quintile = models.BooleanField(default=False)
